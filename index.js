@@ -12,11 +12,10 @@ students.forEach((student) =>
 
 console.log("---------------------------");
 
-// don't call yourself out like that. keep your head up lil bro
 const dumbass = students.filter((student) => student.grade < 90);
 dumbass.forEach((student) =>
   console.log(
-    "this dummy (u) " +
+    "this dummy  " +
       student.name +
       "'s grade is below ninety lmaoooo point and laugh"
   )
@@ -29,9 +28,8 @@ console.log(topStudents);
 
 console.log("---------------------------");
 
-// use <= smh my head
-const youngStudents = students.filter((student) => student.age >= 21);
-// what if im not 21
+const youngStudents = students.filter((student) => student.age <= 21);
+
 console.log(youngStudents);
 
 console.log("---------------------------");
@@ -52,12 +50,8 @@ products.forEach((product) =>
 
 console.log("---------------------------");
 
-// make dat joint expensive
-//it do be like that
-
 products.forEach((product) =>
   console.log(
-    // nice spelling loiser
     "Unfortunately for you, due to capatilism costs the item " +
       product.name +
       " now costs " +
@@ -74,6 +68,33 @@ products.forEach((product) => {
     categories.push(product.category);
   }
 });
+console.log("Unique Categories:", categories);
 
 console.log("---------------------------");
-//keep your money up, not your funny up little bro :skull:
+
+const electronics = products.filter(
+  (product) => product.category === "Electronics"
+);
+console.log("Electronics:", electronics);
+
+const expensiveProducts = products.filter((product) => product.price > 300);
+console.log("Expensive Products:", expensiveProducts);
+
+const goodProducts = products.filter((product) => product.rating >= 4.5);
+console.log("Highly Rated Products:", goodProducts);
+
+console.log("---------------------------");
+
+products
+  .filter((product) => product.rating >= 4.5)
+  .forEach((product) =>
+    console.log("The product " + product.name + " is highly rated")
+  );
+
+console.log("---------------------------");
+
+products
+  .filter(
+    (product) => product.category === "Electronics" && product.price >= 1000
+  )
+  .forEach((product) => console.log(product));
